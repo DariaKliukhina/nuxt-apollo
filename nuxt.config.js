@@ -28,7 +28,7 @@ export default {
   loading: {
     color: baseColor,
   },
-  css: ['~assets/styles/styles.styl'],
+  css: [{src: '~assets/styles/styles.styl', lang: 'styl'}],
   styleResources: {
     stylus: [
       '~assets/styles/global/vars.styl',
