@@ -1,0 +1,16 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "kind": "UNION",
+        "name": "PageUnion",
+        "possibleTypes": [{ "name": "Page" }]
+      },
+      {
+        "kind": "UNION",
+        "name": "SectionCardListUnion",
+        "possibleTypes": [{ "name": "SectionCardList" }]
+      }
+    ]
+  }
+}

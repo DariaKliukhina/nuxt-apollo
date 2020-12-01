@@ -1,0 +1,73 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "private": true,
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.config/git/commitizen.js"
+    }
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './.config/git/commitlint.js'"
+    }
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/axios": "^5.12.3",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/sentry": "^4.5.0",
+    "@nuxtjs/svg-sprite": "^0.5.1",
+    "@ungap/global-this": "^0.4.1",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "axios": "^0.21.0",
+    "body-scroll-lock": "^3.1.5",
+    "bowser": "^2.11.0",
+    "commitizen": "^4.2.2",
+    "cookie-universal-nuxt": "^2.1.4",
+    "core-js": "^3.6.5",
+    "graphql": "^15.4.0",
+    "graphql-tag": "^2.11.0",
+    "lazysizes": "^5.2.2",
+    "nuxt": "^2.14.6",
+    "nuxt-polyfill": "^1.0.3",
+    "nuxt-user-agent": "^1.2.2",
+    "postsvg": "^2.2.7",
+    "smoothscroll-polyfill": "^0.4.4",
+    "stylus": "^0.54.8",
+    "throttle-debounce": "^3.0.1",
+    "vue-inline-svg": "^2.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0"
+  }
+}

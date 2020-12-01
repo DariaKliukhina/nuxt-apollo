@@ -1,0 +1,49 @@
+variables:
+  IMG_TAG: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_NAME
+
+stages:
+  - pull_code
+  - build_code
+  - run_server
+
+delivery_job:
+  stage: pull_code
+  variables:
+    CI_DEBUG_TRACE: "true"
+  tags:
+    - stage
+  only:
+    refs:
+      - stage
+
+  before_script:
+    - cd /data/fes
+  script:
+    - git remote prune origin && git fetch && git checkout $CI_COMMIT_REF_NAME && git pull origin $CI_COMMIT_REF_NAME
+
+build_code_job:
+  stage: build_code
+  tags:
+    - stage
+  only:
+    refs:
+      - stage
+  before_script:
+    - cd /data/fes
+  script:
+    - docker build . --tag $IMG_TAG:$CI_PIPELINE_ID
+    # - docker rmi -f $(docker images -q --filter label=stage=intermediate)
+
+run_server_job:
+  stage: run_server
+  tags:
+    - stage
+  only:
+    refs:
+      - stage
+
+  before_script:
+    - cd /data/fes
+    - STOP=`docker ps | grep $IMG_TAG | awk {'print $1'}` && docker stop $STOP && docker rm $STOP
+  script:
+    - docker run -d --restart=always --name $CI_PIPELINE_ID-$CI_PROJECT_PATH_SLUG --network pinkman-cms_pinkman-cms -p $PORT:4444 $IMG_TAG:$CI_PIPELINE_ID

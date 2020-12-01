@@ -1,0 +1,72 @@
+@import '../../../packages/basis/styles/vars.styl';
+
+// Семейства шрифтов
+$FONT_ROBOTO = 'Roboto';
+//
+// Настройки колоночной системы на десктопах
+$COL_COUNT_DESKTOP = 12;
+$COL_GAP_DESKTOP = 3.2rem;
+$CONTAINER_WIDTH_DESKTOP = 131rem;
+$CONTAINER_SIDE_OFFSET_DESKTOP = 3.2rem;
+$COL_WIDTH_DESKTOP = ($CONTAINER_WIDTH_DESKTOP - ($COL_COUNT_DESKTOP - 1) * $COL_GAP_DESKTOP) / $COL_COUNT_DESKTOP
+//
+// Настройки колоночной системы на планшетах
+$COL_COUNT_TABLE = 12;
+$COL_GAP_TABLET = 2rem;
+$CONTAINER_WIDTH_TABLET = 100%;
+$CONTAINER_SIDE_OFFSET_TABLET = 4rem;
+//
+// Настройки колоночной системы на мобильных
+$COL_COUNT_MOBILE = 12;
+$COL_GAP_MOBILE = 1rem;
+$CONTAINER_WIDTH_MOBILE = 100%;
+$CONTAINER_SIDE_OFFSET_MOBILE = 2rem;
+
+// Толщины шрифтов
+$FW_THIN = 100;
+$FW_EXTRA_LIGHT = $FW_ULTRA_LIGHT = 200;
+$FW_LIGHT = 300;
+$FW_REGULAR = $FW_NORMAL = 400;
+$FW_MEDIUM = 500;
+$FW_SEMI_BOLD = $FW_DEMI_BOLD = 600;
+$FW_BOLD = 700;
+$FW_EXTRA_BOLD = $FW_ULTRA_BOLD = 800;
+$FW_BLACK = $FW_HEAVY = 900;
+
+// Цвета
+$DARK = #252A36;
+$DARK_2 = #4B4F5A;
+$ERROR = #EC3108;
+$GREEN = #00C389;
+$DARK_GREEN = #13AC7E;
+$GREEN_LIGHT = #0BDB9D;
+$BLUE = #001434;
+$GRAY_MEDIUM = #B0B0B0;
+$NAVY = #011433;
+$DARK_BLUE = #4D5B70;
+$PURPLE = #693C5E;
+$PURPLE_LIGHT = #E8DCE5;
+$GREEN_ULTRA_LIGHT = #EDFBF7;
+$GRAY = #E4E7E5;
+$GRAY_LIGHT = #F5F6F8;
+$GRAY_DISABLED = #E5E7EF;
+$GRAY_BUTTON = #3C424A;
+$ORANGE = #F68D2E;
+$ORANGE_LIGHT = #FEF1E6;
+$DISABLED_GREEN = rgba(49, 184, 138, 0.4);
+$WHITE = white
+$GRAY_BORDER = #E5E8ED
+$PINK = #ed1c80
+
+// FES
+$MAIN_BG_COLOR = #E7D9D9;
+$DARK_BG_COLOR = #0d2f6d;
+$LIGHT_BG_COLOR = #99b9f3;
+
+// Ease-синги
+$easeOutSine = cubic-bezier(0.390, 0.575, 0.565, 1.000)
+$easeInOutSine = cubic-bezier(0.445, 0.050, 0.550, 0.950)
+$easeOutExpo =  cubic-bezier(0.190, 1.000, 0.220, 1.000)
+$easeInOutExpo =  cubic-bezier(1.000, 0.000, 0.000, 1.000)
+$easeInOutCirc = cubic-bezier(0.77, 0, 0.175, 1)
+$elastic = cubic-bezier(0, 1.4, 1, 1)

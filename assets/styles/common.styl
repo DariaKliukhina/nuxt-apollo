@@ -1,0 +1,122 @@
+@import '../../packages/basis/styles/common.styl';
+
+$white = $WHITE;
+$medium = $FW_MEDIUM;
+$roboto = $FONT_ROBOTO;
+$desktop = $DESKTOP;
+$green = $GREEN;
+$dark = $DARK;
+$semibold = $FW_SEMI_BOLD;
+$dark_green = $DARK_GREEN;
+$mobile = $MOBILE;
+
+html {
+  font-size: 10px;
+}
+
+@media screen and (max-width: 374px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  html {
+    font-size: calc(10px + 10 * (100vw - 375px) / 392);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: calc(8px + 2.7 * (100vw - 768px) / 255);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html {
+    font-size: calc(7.4px + 2 * (100vw - 1024px) / 256);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html {
+    font-size: calc(9px + 1 * (100vw - 1280px) / 160);
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: calc((10px * (100vw - 1600px) / 240));
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a, button {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  border: none;
+  outline: none;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.25s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.list-fade-enter-active, .list-fade-leave-active {
+  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+}
+
+.list-fade-enter, .list-fade-leave-to {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.menu-components-enter-active, .menu-components-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.menu-components-enter, .menu-components-leave-to {
+  opacity: 0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+for $colNum in 1 .. $COL_COUNT_DESKTOP {
+  for $colNumSecond in 1 .. $COL_COUNT_DESKTOP {
+    @media $desktop {
+      .offset-lg-right-{$colNum} {
+        offsetRight($colNum);
+      }
+
+      .offset-lg-left-{$colNum} {
+        offsetLeft($colNum);
+      }
+
+      .offset-lg-{$colNum}-{$colNumSecond} {
+        offsetLeft($colNum);
+        offsetRight($colNumSecond);
+      }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+$tablet = $TABLET
+$mobile = $MOBILE
+$tablet_desktop = $TABLET_DESKTOP
+$mobile_tablet = $MOBILE_TABLET
+$desktop = $DESKTOP
+$regular = $FW_REGULAR
+$italic = $FW_ITALIC
+$bold = $FW_BOLD
+$dark_2 = $DARK_2;
+$medium = $FW_MEDIUM
+$semibold = $FW_SEMI_BOLD
+$roboto = $FONT_ROBOTO
+$dark = $DARK
+$gray_button = $GRAY_BUTTON
+$green = $GREEN
+$dark_green = $DARK_GREEN
+$disabled_green = $DISABLED_GREEN;
+$white = $WHITE;
+$mainBgColor = $MAIN_BG_COLOR;
+$darkBgColor = $DARK_BG_COLOR;
+$lightBgColor = $LIGHT_BG_COLOR;
+
+[class*='btn--'] {
+  border-radius: .6rem;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 1.4rem 3.2rem;
+  opacity: 1;
+  background-color: $green;
+  transition: background-color .3s ease
+  font(1.4rem, 2rem, $bold, $roboto);
+  @media $mobile_tablet {
+    display: inline-flex;
+  }
+  @media $desktop {
+    display: flex;
+
+    &:hover {
+      background-color: $darkBgColor;
+    }
+  }
+
+  &:disabled, &.disabled {
+    pointer-events: none;
+  }
+}
+.btn {
+  &--big {
+    color: $white;
+
+    &:disabled, &.disabled {
+      background-color: $disabled_green;
+    }
+  }
+
+  &--big-white {
+    background-color: $white;
+    color: $dark_2;
+    transition: opacity .3s ease
+
+    &:disabled, &.disabled {
+      opacity: .6;
+    }
+    @media $desktop {
+      &:hover {
+        opacity: .6;
+        background-color: $white;
+      }
+    }
+  }
+
+  &--big--outline {
+    padding: 1.3rem 3.2rem;
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+
+    &:hover {
+      @media $desktop {
+        color: $white;
+        border: 1px solid $darkBgColor;
+      }
+    }
+
+    &:disabled, &.disabled {
+      background-color: $white;
+      opacity: 0.8;
+      color: $lightBgColor;
+      border: 1px solid $lightBgColor;
+
+        @media $mobile_tablet {
+        background-color: transparent;
+        opacity: .4;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $darkBgColor;
+    }
+  }
+
+  &--arrow-left {
+    position: relative;
+    padding: 1.2rem;
+    height: 4.8rem;
+    width: 4.8rem;
+    color: $white;
+
+    &::before {
+      content: url(../../assets/svg/icons/arrowLeftWhite.svg);
+      position: absolute;
+      height: calc(100% - 2.4rem);
+      width: calc(100% - 2.4rem);
+      top: 1.2rem;
+      left: 1.2rem;
+    }
+
+    @media $mobile_tablet {
+      background-color: transparent;
+      transition: opacity .25s ease;
+      &::before {
+        content: url(../../assets/svg/icons/arrowLeft.svg);
+      }
+    }
+
+    &:disabled, &.disabled {
+      background-color: $disabled_green;
+      @media $mobile_tablet {
+        background-color: transparent;
+        opacity: .4;
+      }
+    }
+  }
+
+  &--arrow-right {
+    position: relative;
+    padding: 1.2rem;
+    height: 4.8rem;
+    width: 4.8rem;
+    color: $white;
+
+    &::before {
+      content: url(../../assets/svg/icons/arrowRightWhite.svg);
+      fill: $white;
+      position: absolute;
+      height: calc(100% - 2.4rem);
+      width: calc(100% - 2.4rem);
+      top: 1.2rem;
+      left: 1.2rem;
+    }
+    @media $mobile_tablet {
+      background-color: transparent;
+      transition: opacity .25s ease;
+      &::before {
+        content: url(../../assets/svg/icons/arrowRight.svg);
+      }
+    }
+
+    &:disabled, &.disabled {
+      background-color: $disabled_green;
+      @media $mobile_tablet {
+        background-color: transparent;
+        opacity: .4;
+      }
+    }
+  }
+}
+
+.link--default {
+  color: $dark;
+  font(1.6rem, 2.4rem, $medium, $roboto)
+  border-bottom: 1px solid $green;
+  cursor: pointer;
+  transition: color .25s ease, opacity .25s ease;
+
+  @media $desktop {
+    &:hover {
+      color: $green;
+
+      &.icon--question {
+        &::before {
+          color: $white;
+          background-color: $green;
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+    
+  &:hover {
+    color: $dark;
+  }
+
+  &.icon--question {
+    margin-left: 3.6rem;
+
+    &::before {
+      content: '?';
+      position: absolute;
+      transition: color .25s ease, background-color .25s ease;
+      left: 2.4rem;
+      height: 2.4rem;
+      width: 2.4rem;
+      color: $green;
+      text-align: center;
+      background-color: rgba(0, 195, 137, .4);
+      border-radius: 50%;
+      margin-right: 1.2rem;
+    }
+  }
+
+}

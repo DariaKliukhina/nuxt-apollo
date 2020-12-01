@@ -1,0 +1,148 @@
+$tablet = $TABLET
+$mobile = $MOBILE
+$tablet_desktop = $TABLET_DESKTOP
+$mobile_tablet = $MOBILE_TABLET
+$desktop = $DESKTOP
+$regular = $FW_REGULAR
+$italic = $FW_ITALIC
+$bold = $FW_BOLD
+$medium = $FW_MEDIUM
+$semibold = $FW_SEMI_BOLD
+$roboto = $FONT_ROBOTO
+$dark = $DARK
+$green = $GREEN
+
+.title {
+
+  &--h1 {
+    margin: 0
+    font(5.8rem, 6.4rem, $semibold, $roboto)
+  }
+
+  &--h2 {
+    margin: 0
+    font(3.2rem, 4rem, $semibold, $roboto)
+  }
+
+  &--h3 {
+    margin: 0
+    font(2.4rem, 3.2rem, $bold, $roboto)
+  }
+
+  &--h4 {
+    margin: 0
+    font(1.8rem, 2.6rem, $bold, $roboto)
+  }
+}
+
+.btn-text {
+
+  &--big {
+    margin: 0
+    font(1.4rem, 2rem, $bold, $roboto)
+  }
+
+  &--small {
+    margin: 0
+    font(1.4rem, 2.2rem, $bold, $roboto)
+  }
+}
+
+.title--label {
+  margin: 0
+  font(1.2rem, 1.6rem, $bold, $roboto)
+}
+
+.subtitle {
+  margin: 0
+  font(1.4rem, 1.4rem, $bold, $roboto, 0.05em)
+  text-transform: uppercase;
+}
+
+.menu-item {
+
+  &--big {
+    margin: 0;
+    font(1.6 rem, 2.2rem, $semibold, $roboto)
+  }
+
+  &--normal {
+    margin: 0;
+    font(1.4rem, 1.9rem, $medium, $roboto)
+  }
+
+  &--little {
+    margin: 0;
+    font(1.2rem, 1.8rem, $medium, $roboto)
+  }
+}
+
+.paragraph {
+
+  &--normal {
+    margin: 0;
+    font(1.6rem, 2.6rem, $medium, $roboto)
+  }
+
+  &--mini {
+    margin: 0;
+    font(1.4rem, 2.2rem, $regular, $roboto)
+  }
+
+  &--small {
+    margin: 0;
+    font(1.2rem, 1.9rem, $regular, $roboto)
+  }
+}
+.header-page-link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color .25s ease;
+  &:hover {
+    color: $green;
+  }
+}
+@media $mobile {
+  .title {
+
+    &--h1 {
+      font(2.8rem, 3.2rem, $bold, $roboto)
+    }
+
+    &--h2 {
+      font(2.4rem, 3.2rem, $bold, $roboto)
+    }
+  }
+}
+.title-link--main {
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .25s ease;
+  color: currentColor;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: box-shadow .25s ease;
+  }
+  @media $desktop {
+    &:hover {
+      color: $dark;
+      &::after {
+        box-shadow: 0px 15px 15px 0 rgba(28, 108, 81, 0.1);
+      }
+    }
+  }
+  @media $mobile_tablet {
+    transition: opacity 0.2s ease;
+    &:active {
+      opacity: .4;
+    }
+  }
+}

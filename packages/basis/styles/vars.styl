@@ -1,0 +1,64 @@
+// Основные Брейкпоинты
+
+$MOBILE = 'screen and (max-width: 767px)';
+$TABLET = 'screen and (min-width: 768px) and (max-width: 1023px)';
+$MOBILE_TABLET = 'screen and (max-width: 1023px)';
+$TABLET_DESKTOP = 'screen and (min-width: 768px)';
+$DESKTOP = 'screen and (min-width: 1024px)';
+$DESKTOP_LARGE = 'screen and (min-width: 1440px)';
+$DESKTOP_SMALL = 'screen and (min-width: 1024px) and (max-width: 1280px)';
+
+// Толщины шрифтов
+$FW_THIN = 100;
+$FW_EXTRA_LIGHT = $FW_ULTRA_LIGHT = 200;
+$FW_LIGHT = 300;
+$FW_REGULAR = $FW_NORMAL = 400;
+$FW_MEDIUM = 500;
+$FW_SEMI_BOLD = $FW_DEMI_BOLD = 600;
+$FW_BOLD = 700;
+$FW_EXTRA_BOLD = $FW_ULTRA_BOLD = 800;
+$FW_BLACK = $FW_HEAVY = 900;
+
+// Стиль шрифта
+$FW_ITALIC = italic
+
+// Настройки колоночной системы на десктопах
+$COL_COUNT_DESKTOP = 12;
+$COL_GAP_DESKTOP = 3.2rem;
+$CONTAINER_WIDTH_DESKTOP = 131rem;
+$CONTAINER_SIDE_OFFSET_DESKTOP = 3.2rem;
+
+// Настройки колоночной системы на планшетах
+$COL_COUNT_TABLE = 8;
+$COL_GAP_TABLET = 2rem;
+$CONTAINER_WIDTH_TABLET = auto;
+$CONTAINER_SIDE_OFFSET_TABLET = 4rem;
+
+// Настройки колоночной системы на мобильных
+$COL_COUNT_MOBILE = 4;
+$COL_GAP_MOBILE = 1rem;
+$CONTAINER_WIDTH_MOBILE = auto;
+$CONTAINER_SIDE_OFFSET_MOBILE = 2rem;
+
+// Уровни слоёв
+$zLayerHide = -1; // скрытый блок
+$zLayerBack = 0; // Видео и бекграунд
+$zLayerContent = 3; // Контент
+$zLayerDecor1 = 5; // Декор разный
+$zLayerDecor2 = 6; // Про запас
+$zLayerSubNav = 7; // Про запас
+$zLayerSubInfo = 8; // Про запас
+$zLayerNav = 9; // Навигация/ссылки
+$zLayerOverlay = 10; // Попапы и тп
+$zLayerTop = 15; // Открытое меню (топовый/верхний слой)
+$zLayerHeaderPopup = 20 // попап в хэдере
+$zLayerPopups = 50; // Попапы и тп
+$zLayerTop = 100; // Открытое меню (топовый/верхний слой)
+
+// EASE
+$easeOutSine = cubic-bezier(0.390, 0.575, 0.565, 1.000)
+$easeInOutSine = cubic-bezier(0.445, 0.050, 0.550, 0.950)
+$easeOutExpo =  cubic-bezier(0.190, 1.000, 0.220, 1.000)
+$easeInOutExpo =  cubic-bezier(1.000, 0.000, 0.000, 1.000)
+$easeInOutCirc = cubic-bezier(0.77, 0, 0.175, 1)
+$elastic = cubic-bezier(0, 1.4, 1, 1)

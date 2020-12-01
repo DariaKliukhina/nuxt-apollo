@@ -1,0 +1,97 @@
+/*! mixins */
+font-face($font-name, $file-path, $weight = 'normal', $style = 'normal')
+  $url = 'url("' + $file-path + '.woff2") format("woff2"), '
+  $url = $url + 'url("' + $file-path + '.woff") format("woff")'
+
+  @font-face
+    font-family $font-name
+    src unquote($url)
+    font-display auto
+    font-weight unquote($weight)
+    font-style unquote($style)
+
+font($font-size, $line-height = 'normal', $font-weight = 500, $font-name = $STYRENE, $letter-spacing = 0)
+  font-size $font-size
+  line-height $line-height
+  font-weight $font-weight
+  font-family $font-name
+  letter-spacing $letter-spacing
+
+list($position = outside)
+  margin 0
+  padding 0
+  text-indent 0
+  list-style none
+  list-style-position $position // - outside/inside
+
+img()
+  width 100%
+  height 100%
+  object-fit cover
+  display block
+
+transOp($opacity)
+  opacity $opacity
+  transition opacity 0.2s ease
+
+out()
+  &:active, &:focus
+    outline none
+    color black
+
+centerY()
+  top 50%
+  transform translatey(-50%)
+
+centerX()
+  left 50%
+  transform translatex(-50%)
+
+user-select()
+  -moz-user-select none
+  -webkit-user-select none
+  -ms-user-select none
+  user-select none
+  -webkit-user-drag none
+  user-drag none
+  -webkit-touch-callout none
+
+// You can add your own mixins here:
+bgi($size)
+  background-position 50% 50%
+  background-size $size
+  background-repeat no-repeat
+square($size)
+  width $size
+  height $size
+
+center()
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  margin auto
+
+pseudo($content = '')
+  content $content
+  position absolute
+  display block
+
+obj-fit() // - IE stuff
+  object-fit cover
+  object-position top
+  font-family 'object-fit: cover; object-position: top;'
+  width 100%
+  display block
+
+// - сдвигает full-width блок в левый край экрана на любом разрешении (в каждом медиа должен быть свой размер контейнера)
+fullWidth(contentWidth)
+  width 100vw
+  left 'calc((100vw - %s) / 2 * -1)' % contentWidth
+
+offsetRight(colCount)
+  margin-right (colCount * $COL_WIDTH_DESKTOP + colCount * $COL_GAP_DESKTOP)
+
+offsetLeft(colCount)
+  margin-left: (colCount * $COL_WIDTH_DESKTOP + colCount * $COL_GAP_DESKTOP)
